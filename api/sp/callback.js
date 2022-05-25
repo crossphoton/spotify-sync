@@ -17,9 +17,7 @@ module.exports = async (req, res) => {
 
     let inDb = await findUserWithEmail(user["email"]);
     if (inDb) {
-      res.send(
-        `Use this link <a href="/api/cp/${inDb.id}">/api/cp/${inDb.id}</a>`
-      );
+      res.redirect(`/api/cp/${inDb.id}`);
     } else {
       let id = await newUser({
         email: user.email,

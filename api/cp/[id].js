@@ -11,7 +11,7 @@ module.exports = async (req, res) => {
   if (cp.status === 401) {
     let refresh = await refreshAccessToken(user.refresh_token);
     if (refresh.status != 200) {
-      return res.redirect("/error");
+      return res.redirect(`/error?user=${id}`);
     }
     refresh = await refresh.json();
 

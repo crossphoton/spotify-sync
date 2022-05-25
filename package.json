@@ -1,0 +1,13 @@
+{
+  "name": "spotify-sync",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/crossphoton/spotify-sync.git",
+  "author": "Aditya Agrawal <adiag1200@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "node-fetch": "2",
+    "pg": "^8.7.3",
+    "uuid": "^8.3.2"
+  }
+}

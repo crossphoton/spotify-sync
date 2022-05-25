@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spotify Sync</title>
+    <link rel="stylesheet" href="./common.css" />
+  </head>
+  <body>
+    <header style="font-size: 30px">Spotify Sync</header>
+    <iframe
+      id="sp-iframe"
+      style="border-radius: 12px"
+      src="https://open.spotify.com/embed/track/0iQxTkoUwfGBhciZUSNPmz?utm_source=generator"
+      width="400"
+      height="500"
+      frameborder="0"
+      allowfullscreen=""
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+    ></iframe>
+    <button id="refresh-cp" class="btn">Refresh</button>
+    <div id="your-link"></div>
+  </body>
+
+  <script src="./common.js"></script>
+  <script>
+    if (params.get("trackId")) {
+      uri = p.get("trackId");
+      document
+        .getElementById("sp-iframe")
+        .setAttribute(
+          "src",
+          `https://open.spotify.com/embed/track/${uri}?utm_source=generator`
+        );
+    } else {
+      window.location.href = "/nothings-playing";
+    }
+  </script>
+</html>
